@@ -9,7 +9,7 @@ namespace ControllerAndModule
 {
     public  class Controller
     {
-        public static string ProcessFilePath(string path)
+        public  string ProcessFilePath(string path)
         {
             if (path != null)
             {
@@ -21,7 +21,7 @@ namespace ControllerAndModule
             }
         }
 
-        public static string ProcessText(Stream s)
+        public  string ProcessText(Stream s)
         {
             var reader = new StreamReader(s);
             string text = reader.ReadToEnd();
@@ -30,7 +30,7 @@ namespace ControllerAndModule
             return text;
         }
 
-        public static void ProcessWriteText(Stream s, string text)
+        public  void ProcessWriteText(Stream s, string text)
         {
             var writer = new StreamWriter(s);
             writer.Write(text);
