@@ -10,9 +10,10 @@ namespace UnitTestProject1
     {
         [TestMethod]
         public void TestMethod1()
-        { 
+        {
+            Controller control = new Controller();
             string path = "fdsffd";
-            Assert.AreEqual(Controller.ProcessFilePath(path), path);
+            Assert.AreEqual(control.ProcessFilePath(path), path);
            
         }
         [TestMethod]
@@ -27,8 +28,8 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod3()
         {
-            string path = "c:/work/1.txt";
-            string path1 = "c:/work/2.txt";
+            string path = "C:/Users/lucke/Desktop/1.txt";
+            string path1 = "C:/Users/lucke/Desktop/2.txt";
             var reader = new Reader();
             var writer = new Writer();
             var fileRead = new FileStream(path, FileMode.Open);
@@ -41,11 +42,12 @@ namespace UnitTestProject1
         [TestMethod]
         public void TestMethod4()
         {
-            string path = "c:/work/13.txt";
+            Controller control = new Controller();
+            string path = "C:/Users/lucke/Desktop/3.txt";
             var  s = new FileStream(path, FileMode.Open);
             var read = new StreamReader(s);
             string text = read.ReadToEnd();
-            Assert.AreEqual(Controller.ProcessText(s).GetType(),text.GetType());
+            Assert.AreEqual(control.ProcessText(s).GetType(),text.GetType());
         }
     }
 }
