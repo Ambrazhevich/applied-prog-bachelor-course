@@ -26,6 +26,17 @@ namespace UnitTestProject1
             Assert.AreEqual(c.GetType(), Operations.Cross(a, b).GetType());
 
         }
+
+        //Тест на возращение типа point метода Line.Check
+        [TestMethod]
+        public void TestMethod4()
+        {
+            var a = new Line(-1, 0);
+            var b = new Line(1, 0);
+            var c = new point((double)0, (double)0);
+            Assert.AreEqual(c.GetType(), Operations.Cross(a, b).GetType());
+
+        }
         //Тест на возращение типа point если прямые одинаковые
         [TestMethod]
         public void TestMethod3()
