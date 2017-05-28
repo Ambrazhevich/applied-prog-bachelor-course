@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1
         FileContent fc = new FileContent();
         Reader Read = new Reader();
         Writer Wr = new Writer();
+        Controller control = new Controller();
 
         public Form1()
         {
@@ -28,7 +29,7 @@ namespace WindowsFormsApplication1
         {
             if (fc.path!=null)
             {
-                richTextBox1.Text = Controller.ProcessText(Read.SuccesResult(Controller.ProcessFilePath(fc.path)));
+                richTextBox1.Text = control.ProcessText(Read.SuccesResult(control.ProcessFilePath(fc.path)));
             }
             else
             {
@@ -41,7 +42,7 @@ namespace WindowsFormsApplication1
             if (fc.path != null)
             {
                 fc.Text = richTextBox1.Text;
-                Controller.ProcessWriteText(Wr.SuccesResult(Controller.ProcessFilePath(fc.path)), fc.Text);
+                control.ProcessWriteText(Wr.SuccesResult(control.ProcessFilePath(fc.path)), fc.Text);
                 MessageBox.Show("Файл успешно записан");
             }
             else
